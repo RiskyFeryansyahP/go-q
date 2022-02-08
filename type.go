@@ -53,3 +53,30 @@ type QueueInt interface {
 	// in the queue
 	FindIndex(value int) (int, bool)
 }
+
+type QueueInt32 interface {
+	// Enqueue add new element add store it in rear / end
+	// position of the queue
+	Enqueue(value int32)
+
+	// Dequeue get element at front of the queue
+	// and remove the element at front of the queue
+	Dequeue() int32
+
+	// Length get the size of the queue
+	Length() int
+
+	// IsEmpty check if the queue is empty
+	IsEmpty() bool
+
+	// HeadValue get the front / head value of the queue
+	HeadValue() int32
+
+	// TailValue get the rear / tail value of the queue
+	TailValue() int32
+
+	// FindIndex find the index of given value as param
+	// and return the index if value matches with value
+	// in the queue
+	FindIndex(value int32) (int, bool)
+}
