@@ -8,8 +8,8 @@ Queue implementation written in Go-Lang. fast and simple.
 - Create Queue implementation (can be in array / linked list)
     - [X] string
     - [X] int
-    - [ ] int32
-    - [ ] int64
+    - [X] int32
+    - [X] int64
     - [ ] float
     - [ ] float32
     - [ ] float64
