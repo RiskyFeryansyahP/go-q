@@ -107,3 +107,57 @@ type QueueInt64 interface {
 	// in the queue
 	FindIndex(value int64) (int, bool)
 }
+
+type QueueFloat32 interface {
+	// Enqueue add new element add store it in rear / end
+	// position of the queue
+	Enqueue(value float32)
+
+	// Dequeue get element at front of the queue
+	// and remove the element at front of the queue
+	Dequeue() float32
+
+	// Length get the size of the queue
+	Length() int
+
+	// IsEmpty check if the queue is empty
+	IsEmpty() bool
+
+	// HeadValue get the front / head value of the queue
+	HeadValue() float32
+
+	// TailValue get the rear / tail value of the queue
+	TailValue() float32
+
+	// FindIndex find the index of given value as param
+	// and return the index if value matches with value
+	// in the queue
+	FindIndex(value float32) (int, bool)
+}
+
+type QueueFloat64 interface {
+	// Enqueue add new element add store it in rear / end
+	// position of the queue
+	Enqueue(value float64)
+
+	// Dequeue get element at front of the queue
+	// and remove the element at front of the queue
+	Dequeue() float64
+
+	// Length get the size of the queue
+	Length() int
+
+	// IsEmpty check if the queue is empty
+	IsEmpty() bool
+
+	// HeadValue get the front / head value of the queue
+	HeadValue() float64
+
+	// TailValue get the rear / tail value of the queue
+	TailValue() float64
+
+	// FindIndex find the index of given value as param
+	// and return the index if value matches with value
+	// in the queue
+	FindIndex(value float64) (int, bool)
+}
