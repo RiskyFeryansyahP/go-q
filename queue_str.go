@@ -15,7 +15,7 @@ type queueStr struct {
 }
 
 // NewQueue initialize new queue
-func NewQueue() QueueStr {
+func NewQueueStr() QueueStr {
 	queue := &queueStr{
 		Size: 0,
 		Head: "",
