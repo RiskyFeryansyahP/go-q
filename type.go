@@ -1,5 +1,32 @@
 package main
 
+type Queue[T any] interface {
+	// Enqueue add new element add store it in rear / end
+	// position of the queue
+	Enqueue(value T)
+
+	// Dequeue get element at front of the queue
+	// and remove the element at front of the queue
+	Dequeue() T
+
+	// Length get the size of the queue
+	// Length() int
+
+	// IsEmpty check if the queue is empty
+	// IsEmpty() bool
+
+	// HeadValue get the front / head value of the queue
+	// HeadValue() T
+
+	// TailValue get the rear / tail value of the queue
+	// TailValue() T
+
+	// FindIndex find the index of given value as param
+	// and return the index if value matches with value
+	// in the queue
+	// FindIndex(value T) (int, bool)
+}
+
 type QueueStr interface {
 	// Enqueue add new element add store it in rear / end
 	// position of the queue
