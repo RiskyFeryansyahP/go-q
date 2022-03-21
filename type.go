@@ -1,6 +1,8 @@
 package main
 
-type Queue[T any] interface {
+import "golang.org/x/exp/constraints"
+
+type Queue[T constraints.Ordered] interface {
 	// Enqueue add new element add store it in rear / end
 	// position of the queue
 	Enqueue(value T)
@@ -10,21 +12,21 @@ type Queue[T any] interface {
 	Dequeue() T
 
 	// Length get the size of the queue
-	// Length() int
+	Length() int
 
 	// IsEmpty check if the queue is empty
-	// IsEmpty() bool
+	IsEmpty() bool
 
 	// HeadValue get the front / head value of the queue
-	// HeadValue() T
+	HeadValue() T
 
 	// TailValue get the rear / tail value of the queue
-	// TailValue() T
+	TailValue() T
 
 	// FindIndex find the index of given value as param
 	// and return the index if value matches with value
 	// in the queue
-	// FindIndex(value T) (int, bool)
+	FindIndex(value T) (int, bool)
 }
 
 type QueueStr interface {

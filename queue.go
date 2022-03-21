@@ -1,6 +1,8 @@
 package main
 
-type queue[T any] struct {
+import "golang.org/x/exp/constraints"
+
+type queue[T constraints.Ordered] struct {
 	// hold of the length of queue
 	Size int
 
@@ -15,7 +17,7 @@ type queue[T any] struct {
 }
 
 // NewQueue initialize new queue
-func NewQueue[T any]() Queue[T] {
+func NewQueue[T constraints.Ordered]() Queue[T] {
 	queue := &queue[T]{
 		Size: 0,
 		Data: make([]T, 0),
@@ -62,4 +64,30 @@ func (q *queue[T]) Dequeue() T {
 	}
 
 	return enqueueVal
+}
+
+func (q queue[T]) Length() int {
+	return q.Size
+}
+
+func (q queue[T]) IsEmpty() bool {
+	return q.Size == 0
+}
+
+func (q queue[T]) HeadValue() T {
+	return q.Head
+}
+
+func (q queue[T]) TailValue() T {
+	return q.Tail
+}
+
+func (q queue[T]) FindIndex(value T) (int, bool) {
+	for k, v := range q.Data {
+		if v == value {
+			return k, true
+		}
+	}
+
+	return -1, false
 }
