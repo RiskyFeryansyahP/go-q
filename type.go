@@ -27,6 +27,14 @@ type Queue[T constraints.Ordered] interface {
 	// and return the index if value matches with value
 	// in the queue
 	FindIndex(value T) (int, bool)
+
+	// Serobot is ingrained in our culture. Why queue when you
+	// can just jump the queue?
+	Serobot(value T)
+
+	// OrDal is a more powerful version of Serobot, as it guarantees
+	// that you get in front of the queue no matter how long it is.
+	OrDal(value T)
 }
 
 type QueueStr interface {
